@@ -1,0 +1,75 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  E:\CodingSoftware\cmder\bin;E:\CodingSoftware\cmder\vendor\bin;E:\CodingSoftware\cmder\vendor\conemu-maximus5\ConEmu\Scripts;E:\CodingSoftware\cmder\vendor\conemu-maximus5;E:\CodingSoftware\cmder\vendor\conemu-maximus5\ConEmu;C:\Program Files\Java\jdk1.8.0_231\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Pervasive Software\PSQL\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\PuTTY\;C:\Program Files (x86)\Yarn\bin\;C:\Users\mpumi\Downloads\geckodriver-v0.24.0-win64;C:\Users\mpumi\AppData\Local\Programs\Python\Python37-32\Scripts;C:\Users\mpumi\AppData\Local\Programs\Python\Python37-32\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Calibre2\;C:\flutter\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\erl10.3\bin;C:\Program Files (x86)\Elixir\bin;C:\WINDOWS\system32\config\systemprofile\.mix\escripts;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\mpumi\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\mpumi\AppData\Local\Programs\Python\Python37-32\;C:\Users\mpumi\AppData\Local\Microsoft\WindowsApps;C:\Users\mpumi\AppData\Roaming\npm;C:\Users\mpumi\AppData\Local\Programs\Microsoft VS Code\bin;C:\TDM-GCC-64\bin;C:\Users\mpumi\AppData\Local\GitHubDesktop\bin;C:\Users\mpumi\AppData\Local\ArangoDB3-client 3.4.7/usr\bin;C:\Users\mpumi\AppData\Local\Yarn\bin;C:\Users\mpumi\.dotnet\tools;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;E:\CodingSoftware\cmder
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:56:26)
+
+npm manifest: 
+  {
+    "name": "resume",
+    "version": "0.0.0",
+    "scripts": {
+      "ng": "ng",
+      "start": "ng serve",
+      "build": "ng build",
+      "test": "ng test",
+      "lint": "ng lint",
+      "e2e": "ng e2e"
+    },
+    "private": true,
+    "dependencies": {
+      "@angular/animations": "~8.1.0",
+      "@angular/common": "~8.1.0",
+      "@angular/compiler": "~8.1.0",
+      "@angular/core": "~8.1.0",
+      "@angular/forms": "~8.1.0",
+      "@angular/platform-browser": "~8.1.0",
+      "@angular/platform-browser-dynamic": "~8.1.0",
+      "@angular/router": "~8.1.0",
+      "@ngrx/store": "^9.1.0",
+      "http-operators": "0.0.3",
+      "rxjs": "~6.4.0",
+      "tslib": "^1.11.1",
+      "zone.js": "~0.9.1"
+    },
+    "devDependencies": {
+      "@angular-devkit/build-angular": "~0.801.0",
+      "@angular/cli": "~8.1.0",
+      "@angular/compiler-cli": "~8.1.0",
+      "@angular/language-service": "~8.1.0",
+      "@types/jasmine": "~3.3.8",
+      "@types/jasminewd2": "~2.0.3",
+      "@types/node": "~8.9.4",
+      "codelyzer": "^5.0.0",
+      "jasmine-core": "~3.4.0",
+      "jasmine-spec-reporter": "~4.2.1",
+      "karma": "~4.1.0",
+      "karma-chrome-launcher": "~2.2.0",
+      "karma-coverage-istanbul-reporter": "~2.0.1",
+      "karma-jasmine": "~2.0.1",
+      "karma-jasmine-html-reporter": "^1.5.2",
+      "protractor": "^5.4.3",
+      "ts-node": "~7.0.0",
+      "tslint": "~5.15.0",
+      "typescript": "~3.4.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

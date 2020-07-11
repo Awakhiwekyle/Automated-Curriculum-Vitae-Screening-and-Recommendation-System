@@ -1,0 +1,148 @@
+<header class="app-header navbar">
+    <h4 class="ml-4 mt-1 logo">Smart-Recruiter</h4>
+    <ul class="nav navbar-nav d-md-down-none">
+      <li class="nav-item px-3">
+        <a class="nav-link" routerLink="/cv">Submit your CV</a>
+      </li>
+      <li class="nav-item px-3">
+        <a class="nav-link" routerLink="/login" style="color: #1B8EB7;" *ngIf="!isLoggedIn"><strong>Sign in</strong></a>
+        <span class="nav-link" href="#" style="color: #1B8EB7;" *ngIf="isLoggedIn">Welcome {{username | titlecase}}</span>
+      </li>
+      <!-- <li class="nav-item px-3">
+        <a class="nav-link" href="#">Employers/Post Job</a>
+      </li> -->
+      <li class="nav-item px-3" *ngIf="isLoggedIn">
+        <a class="nav-link"  href="#" style="color: #1B8EB7;" (click) = "signOut()"><strong>Sign Out</strong></a>
+      </li>
+    </ul>   
+    
+  </header>
+
+  <main>
+      <div class="search text-light" >
+        <div class="row">
+            <div class="col">
+              <div class="labels">What</div>
+              <div class="text-light desc">Job title, keywords, or company</div>
+            </div>
+            <div class="col">
+              <div class="labels">Where</div>
+              <div class="text-light desc">City, province, or postal code</div>
+            </div>           
+            <div class="col">
+             
+            </div>           
+        </div>
+        
+        <div class="row pt-4">            
+            <div class="col">
+                <div class="input-group">                    
+                    <input type="text" class="form-control form-control-lg border-0" [(ngModel)]="job">
+                    <div class="input-group-append">
+                        <span class="input-group-text text-primary border-0 px-3" >
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="input-group">                    
+                    <input type="text" class="form-control form-control-lg border-0" [(ngModel)]="location">
+                    <div class="input-group-append">
+                        <span class="input-group-text text-primary border-0 px-3" >
+                            <i class="fa fa-map-marker"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>           
+            <div class="col">
+              <button class="btn btn-primary btn-pill btn-lg px-4" type="submit" (click)="loadJobs()">Find Jobs</button>
+            </div>   
+           
+                      
+        </div>
+        
+      </div>
+  </main>
+  <!-- <hr style="margin-top: 5vh;"> -->
+  <div class="search-results mt-3">    
+    <div class="alert alert-danger" role="alert" *ngIf="showSuccessMessage">Successfully applied for job</div>
+    <div class="alert alert-danger" role="alert" *ngIf="noJobs">No Jobs currently</div>
+    <ng-container *ngIf="jobs.length != 0">
+    <div class="card" *ngFor="let job of jobs | filter:job | filter:location">
+      <div class="card-body pb-4">
+        <div class="btn-group float-right">
+          <form [formGroup]="this.homeService.form" (ngSubmit)="postApplication(job.id)" ngNativeValidate>
+            <input type="hidden" formControlName="job_id" value="job.id">
+            <input type="hidden" formControlName="username" value="this.username">
+            <button class="btn p-0" type="submit" >
+            <i class="icon-envelope font-2xl text-primary"></i>
+          </button>
+          </form>
+          
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item bg-primary" href="#">Apply</a>
+            <!-- <a class="dropdown-item" href="#">Save</a>
+            <a class="dropdown-item" href="#">Something else here</a> -->
+          </div>
+        </div>
+        
+        <div class="text-value">{{job.job_title | titlecase }}</div>
+        <div class="company">{{job.company | titlecase }} &#11088;</div>
+        <div class="location">{{job.city | titlecase }}, {{job.country | titlecase }}</div>
+        <div class="qualification">{{job.education_need | titlecase }}</div>
+        <div class="qualification">{{job.experience_needed | titlecase }}</div>
+        <div class="skills">{{job.skills_needed | titlecase }}</div>
+        <div class="ad-ends text-danger mt-1">Opens {{job.ad_starts}}  Closes {{job.ad_ends}}</div>    
+      </div>     
+    </div>
+  </ng-container>
+  </div>
+  <div class="popular-searches" style="margin-bottom: 5%;">
+    <h2 class="popular-heading">Popular Searches</h2>
+    
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto bg-success rounded m-2 pt-3 justify-content-md-center">
+          <p><i class="fa fa-search mr-2"></i>Customer services </p>
+        </div>
+        <div class="col-md-auto bg-success rounded m-2 pt-3 justify-content-md-center">
+          <p><i class="fa fa-search mr-2"></i>Part time</p>
+        </div>
+        <div class="col-md-auto bg-success rounded m-2 pt-3 justify-content-md-center">
+          <p><i class="fa fa-search mr-2"></i>Sales</p>
+        </div>
+        <div class="col-md-auto bg-success rounded m-2 pt-3 justify-content-md-center">
+          <p><i class="fa fa-search mr-2"></i>Python</p>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto bg-success rounded m-2 pt-3 justify-content-md-center">
+          <p><i class="fa fa-search mr-2"></i>Technician</p>
+        </div>
+        <div class="col-md-auto bg-success rounded m-2 pt-3 justify-content-md-center">
+          <p><i class="fa fa-search mr-2"></i>Pastel</p>
+        </div>
+        <div class="col-md-auto bg-success rounded m-2 pt-3 justify-content-md-center">
+          <p><i class="fa fa-search mr-2"></i>Retail</p>
+        </div>
+        <div class="col-md-auto bg-success rounded m-2 pt-3 justify-content-md-center">
+          <p><i class="fa fa-search mr-2"></i>Human Resources</p>
+        </div>
+      
+    </div>
+  </div>
+
+  
+
+  <footer class="app-footer footer">
+    <div>
+      <a href="https://awajobs.com">Smart-Recruiter</a>
+      <span>&copy; 2020 Smart-Recruiter.</span>
+    </div>
+    <div class="ml-auto">
+      <span>Developed by </span>
+      <a href="https://awa-eng.io">Awakhiwe Khabo-engineering</a>
+    </div>
+  </footer>
+

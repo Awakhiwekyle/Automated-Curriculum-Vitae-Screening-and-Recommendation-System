@@ -1,0 +1,61 @@
+<div class="modal fade" id="addEducationModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header no-bd">
+                <h5 class="modal-title">                                  
+                    <span class="fw-light">
+                        Education
+                    </span>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="small">Fill the form to add or edit work experience</p>
+                <form  [formGroup]="this.eduService.form" (ngSubmit)="onSubmit()" ngNativeValidate>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">
+                                <input  type="text" formControlName="degree" class="form-control" placeholder="Degree/Diploma" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">                                                
+                                <input  type="text" formControlName="school" class="form-control" placeholder="School" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">                                                
+                                <input  type="text" formControlName="city" class="form-control" placeholder="City" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">                                                
+                                <input  type="text" formControlName="fieldOfStudy" class="form-control" placeholder="Field of Study" required>
+                            </div>
+                        </div>
+                        
+
+                        <div class="col-sm-12 mb-2 text-muted " style="margin-left: 5px;">
+                            Duration
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">                                                
+                                <input  type="number" min="1" formControlName="duration" class="form-control" placeholder="Months" required>
+                            </div>
+                        </div>                 
+                    </div>
+                   
+                    <div class="modal-footer no-bd">                        
+                        <button type="submit" class="btn btn-primary">Add</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+                <!-- <div>test</div> -->
+            </div>
+            
+        </div>
+    </div>
+</div>
+

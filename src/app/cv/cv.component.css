@@ -1,0 +1,102 @@
+.top-highlight{
+    height: 22vh;
+}
+
+.logo{
+    color: #20A8D8;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+.top-highlight{
+    background-color: white;
+}
+
+
+.whole-top{
+    height: 13vh;
+}
+
+.bot{
+    border-bottom: #20A8D8 3px solid;
+}
+.top{
+    height: 6vh;
+}
+
+.blue-left{
+    width: 17%;
+}
+
+.blue-right{
+    width: 21%;
+}
+
+.spacing-left{
+    width: 42%;
+    /* background-color: #20A8D8; */
+    padding: 10px 0 0 40px;      
+}
+.spacing-center{
+    width: 1%;
+}
+
+.jobs-twins{
+    width: 20%;  
+    background-color: #20A8D8;  
+}
+
+.spacing-right{
+   width: 10%;
+   padding: 10px 10px 0 10px;   
+}
+
+.circle{
+    width: 55px;
+    height: 55px;
+    margin-left: 1%;
+    background-color: rgb(187, 209, 238);
+    position: absolute;
+    left: 12%;
+    top: 9%;
+    border-radius: 50%;
+    padding: 13px 0 0 12px;
+    border: #20A8D8 solid 2px;;
+}
+
+.initials{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+
+.form-left{
+    width: 43%;
+    margin: 5vh 17% 0 14.5%;
+    background-color: white;
+    padding: 3vw;
+}
+
+.name{
+    /* color: #20A8D8; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.headings{
+    /* color: #20A8D8; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    /* font-size: large; */
+}
+
+.line{
+    padding: 0;
+    margin-top: 6px;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }

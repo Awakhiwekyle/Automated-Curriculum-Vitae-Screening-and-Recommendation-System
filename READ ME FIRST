@@ -1,0 +1,56 @@
+10 july 2020 COVID 19
+
+Awakhiwe Khabo N0163520Y
+Computer Science
+National University Of Science and Technology (ZW)
+awakhiwekhabo@gmail.com
+
+Welcome to the installation guide of Smart-Recruiter
+
+Automated Curriculum Vitae Screening and Recommendation System (ACVSRS).
+
+#######################
+What to install
+#######################
+1. NodeJS
+2. Angualar
+3. Python3 install
+4. npm install
+5. pip3 install
+6. pip3 install GENSIN (NLP Similarity Library)
+7. pip3 install jieba (NLP Library)
+8. pip install corpora
+9. cd to backend & Run 'req.txt' file to install all dependencies using 'pip install -r req.txt'
+
+
+#######################
+Database
+#######################
+1. Install MySQL Shell
+2. Install MySQL Server
+3. Create a database called 'awa' on MySQL
+4. Run the Server and import database file named 'awa.sql' into database 'awa'
+
+
+########################
+How to run the system
+########################
+1. Open terminal
+2. Open another terminal tab
+3. First tab cd to project folder files.
+4. type 'ng serve' THEN 'ENTER' to run frontend
+5. On second terminal tab type 'cd backend' THEN 'ENTER'
+6 Type Python3 app.py THEN 'ENTER' to run backend
+
+########################
+How to use System
+########################
+1. open browser on 'http://localhost:5000/adminlogin' for ADMIN dashboard
+2. open browser on 'http://localhost:4200/Home' for Home page
+
+
+########  #     # ######## ####### #      #
+#         # #   #     #    #     #  #    #
+########  #  #  #     #    #     #   ##
+#         #   # #     #    #     #    #
+########  #    ##  ###     #######     #   # # #

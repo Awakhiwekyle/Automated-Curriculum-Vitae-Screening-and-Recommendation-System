@@ -1,0 +1,87 @@
+.logo{
+    color: #20A8D8;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+.search{
+    margin: 15vh 15vw 3vh 25vw;
+}
+
+.labels{
+    font-size: x-large;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+.desc{
+    font-family: 'Montserrat', sans-serif;
+}
+
+main{
+    background: url("../../assets/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    margin-top: -15vh;
+    padding-top: 12vh;
+  }
+  
+  /* main::after {
+    content: "";
+    position: absolute;
+    margin-top: 7vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 46vh;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+  } */
+  
+  .popular-searches{
+    padding-left: 25%;
+    width: 70%;
+  }
+
+  .search-results{
+    padding-left: 30%;
+    padding-right: 35%;
+    /* width: 100%; */
+  }
+  
+  .popular-heading{
+    margin-left: 35%;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+  }
+
+  .company{
+    font-size: large;
+    font-weight: 500;
+    color: #4C4F50;
+  }
+
+  .location{
+    color: #4C4E50;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .qualification{
+    color: #4C4E50;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .skills{
+    color: #4C4E50;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .ad-ends{
+    font-size: small;
+    font-family: 'Montserrat', sans-serif;
+  }

@@ -1,0 +1,11 @@
+1. Prevent registration upon unmatching passwords
+2. fix update forms on cv
+3. create admin forms for uploading jobs that include deadlines
+4. create matching and ranking algorithm
+5. Send email upon match on deadline day
+6. Reports on cv
+7. Dashboard
+8. Job search engine and application
+9. Fix circle
+10. Fix edit and delete for everything
+

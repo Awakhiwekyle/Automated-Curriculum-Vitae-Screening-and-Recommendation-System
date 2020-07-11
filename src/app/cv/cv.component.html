@@ -1,0 +1,225 @@
+<header class="app-header navbar">
+    <h4 class="ml-4 mt-1 logo">Smart-Recruiter</h4>
+    <ul class="nav navbar-nav d-md-down-none">
+    <li class="nav-item d-md-down-none">
+        <a class="nav-link" href="#">
+            <i class="icon-bell"></i>
+            <span class="badge badge-pill badge-danger">5</span>
+        </a>
+    </li>  
+    <li class="nav-item px-3">
+      <!-- <a class="nav-link" routerLink="/login" style="color: #1B8EB7;" *ngIf="!isLoggedIn"><strong>Sign in</strong></a> -->
+      <span class="nav-link" href="#" style="color: #1B8EB7;" *ngIf="isLoggedIn">Welcome {{username | titlecase}}</span>
+    </li>    
+      <li class="nav-item px-3">
+        <a routerLink="/home" class="nav-link"  href="#" style="color: #1B8EB7;">
+          <strong>Home</strong></a>
+      </li>
+
+      <li class="nav-item px-3">
+        <a class="nav-link"  href="#" style="color: #1B8EB7;" (click) = "signOut()" *ngIf="isLoggedIn"><strong>Sign Out</strong></a>
+        <a class="nav-link"  href="#" style="color: #1B8EB7;" (click) = "signOut()" *ngIf="!isLoggedIn"><strong>Sign In</strong></a>
+      </li>
+    </ul>
+  </header>
+
+  <div class="top-highlight border-bottom pt-4">
+    
+    <div>
+        <div class="row whole-top">
+          <div class="blue-left row">
+            <div class="col">
+              <div class="row">
+                <div class="col top"></div>
+              </div>
+              <div class="row">
+                <div class="col bot"></div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="circle">
+            <span class="initials" *ngIf="name">{{name[0] | titlecase}}{{name[1] | titlecase}}</span>    
+            <span class="initials" *ngIf="!name">AB</span>    
+          </div> -->
+
+          <div class="spacing-left border shadow pb-4">
+            <span class="float-right">              
+                <a class="nav-link" href="#" data-toggle="modal"
+                data-target="#personalModal" >
+                  <i class="fa fa-pencil fa-lg"></i>
+                </a>             
+            </span>
+            <div *ngIf="!name"><h4>Name Surname</h4>            
+              <div><i class="icons cui-screen-smartphone"></i> Mobile</div>
+              <div><i class="icon-location-pin"></i> City, Country</div>
+            </div>
+            <div *ngIf="name"><h4>{{name}} {{surname}}</h4>            
+              <div><i class="icons cui-screen-smartphone"></i> {{mobile}}</div>
+              <div><i class="icon-location-pin"></i> {{city}}, {{country}}</div>
+            </div>
+          </div>
+          <div class="spacing-center blue-center">
+            
+          </div>
+
+          <!-- <div class="jobs-twins"> -->
+            <div class="spacing-right border shadow">
+              <span class="float-right">              
+                  <i class="fa fa-exclamation-circle text-muted"></i>           
+            </span>
+              <h4>10</h4>
+               <div class="text-muted">Jobs applied for</div> 
+            </div>
+            <div class="spacing-right border-right border-bottom border-top shadow">
+              <span class="float-right">              
+                <i class="fa fa-exclamation-circle text-muted"></i>           
+              </span>
+              <h4>3</h4>
+              <div class="text-muted">Jobs matched</div> 
+            <!-- </div> -->
+  
+          </div>
+                    <div class="blue-right">
+            <div class="col">
+              <div class="row">
+                <div class="col top"></div>
+              </div>
+              <div class="row">
+                <div class="col bot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+  </div>
+
+  <div class="form-left shadow mb-4">
+    <div class="personal-details mb-4">
+      <span class="float-right"> 
+            
+              <!-- <i class="fa fa-pencil fa-lg text-primary"></i> -->
+                       
+          </span>
+          <div class="name">{{name}} {{surname}}</div> 
+          <div>{{city}}, {{country}}</div> 
+          <div>{{email}}</div> 
+      <div>{{mobile}}</div>
+    </div>    
+
+    <span class="text-muted">Work Experience</span>
+    <a href="" data-toggle="modal" data-target="#addRowModal" ><i class="fa fa-plus-circle fa-lg float-right text-primary"></i></a>
+    
+    <hr class="line">
+    
+    <div class="work-experience mb-4" *ngFor="let experience of experiences">
+      <div class="headings">
+        <span><strong>{{experience.jobtitle}}</strong></span>        
+        <a href="" (click)="delete(experience.id)" data-toggle="modal">
+          <i class="fa fa-trash fa-lg float-right text-primary"></i>
+        </a>
+        <a href="#" data-toggle="modal" data-target="#addRowModal" style="margin-top: 0;" >
+                <i class="fa fa-pencil fa-lg float-right text-primary mr-4" (click) = "updateExperience(experience)" ></i>
+                </a>             
+                  
+      </div>
+      
+      <div class="content text-muted">
+       {{experience.company}}
+      </div>
+      <div class="content text-muted">
+        {{experience.city}}
+       </div>
+      <div class="content text-muted">
+       {{experience.years}} years and {{experience.months}} months
+      </div>
+      <div class="content">
+       {{experience.description}} 
+      </div>
+      
+      
+    </div>
+
+    <div class="work-experience mb-4">
+        <span class="text-muted">Education</span>
+        <a href="" data-toggle="modal" data-target="#addEducationModal" ><i class="fa fa-plus-circle fa-lg float-right text-primary"></i></a>
+        <hr class="line">
+
+        <div *ngFor="let eduItem of education">
+          <div class="headings" >
+          <span>{{eduItem.degree}}</span>        
+          <i class="fa fa-trash fa-lg float-right text-primary"></i>
+          <i class="fa fa-pencil fa-lg float-right text-primary mr-4"></i>
+          </div>
+        
+          <div class="content">
+          {{eduItem.fieldOfStudy}}
+          </div>
+          <div class="content">
+          {{eduItem.school}} - {{eduItem.city}}
+          </div>
+          <div class="content mb-4">
+            {{eduItem.duration}} months
+          </div>    
+        </div>
+        
+    </div>
+
+    
+     <span class="text-muted">Skills</span>
+     <a href="" data-toggle="modal" data-target="#skillModal" ><i class="fa fa-plus-circle fa-lg float-right text-primary"></i></a>
+
+    <hr class="line">
+
+    <div class="work-experience">
+    <div *ngFor="let skill of skills">
+      <div class="headings mb-4" >
+        <!-- <span>Bsc Computer Science</span>         -->
+        <i class="fa fa-trash fa-lg float-right text-primary"></i>
+        <i class="fa fa-pencil fa-lg float-right text-primary mr-4"></i>
+        <div class="content">
+          {{skill.skill}} - {{skill.experience}} years of experience   
+        </div>
+      </div>
+      
+     
+    </div>
+    
+    
+    
+  </div>
+
+
+<div class="work-experience">
+  <span class="text-muted">Certification and Licences</span>
+  <hr class="line">
+
+  <div class="">
+    <!-- <span>Bsc Computer Science</span>         -->
+    <!-- <i class="fa fa-trash fa-lg float-right text-primary"></i> -->
+    <a href="javascript:;" role="button" (click)="showUpload()">
+      <i class="fa fa-plus fa-lg text-primary mr-2 mb-4"></i>Add your certifications
+    </a> 
+  </div>
+  
+  <div class="content" *ngIf="uploadVisible">
+    <input type="file" name="" id="">
+    <button class="btn btn-primary float-right" type="button">Submit</button>
+  </div>
+  
+</div>
+
+  </div>
+  <app-personal (personalEvent) = "receivePersonal($event)"></app-personal>
+  
+  <app-workexp (experienceEvent) = "receiveExperience($event)" [selectedExperience] = "selectedExperience"></app-workexp>
+
+  <app-education (educationEvent) = "receiveEducation($event)"></app-education>
+
+  <app-skill (skillsEvent) = "receiveSkills($event)"></app-skill>
+  
+
+
+
+
+  
